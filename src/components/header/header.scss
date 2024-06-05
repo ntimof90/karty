@@ -1,0 +1,20 @@
+.header {
+  padding-block-start: min(10vi, 144px);
+
+  &__title {
+    font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+    margin-block-end: 40px;
+  }
+
+  &__menu {
+    padding-block: 20px;
+    border-block: 1px solid currentColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    inline-size: 135px;
+  }
+}

@@ -1,0 +1,25 @@
+.theme-toggler {
+  display: flex;
+  gap: 17px;
+  font-size: 18px;
+  line-height: 1.04;
+
+  &__btn {
+
+    &:disabled {
+      font-weight: 700;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: var(--underline);
+        block-size: 6px;
+        inline-size: calc(100% + 8px);
+        inset-inline-start: -4px;
+        inset-block-end: 0;
+        z-index: -1;
+      }
+    }
+  }
+}

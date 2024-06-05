@@ -1,0 +1,42 @@
+{
+  "name": "karty-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write ./src/**/*.{html,scss,js}",
+    "lint": "stylelint ./src/**/*.scss",
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "clean": "gulp clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^9.1.3",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^7.0.1",
+    "del": "^6.0.0",
+    "gulp": "^5.0.0",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "html-minifier": "^4.0.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "prettier": "^3.3.0",
+    "sass": "^1.77.4",
+    "stylelint": "^16.6.1",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ]
+}

@@ -1,0 +1,55 @@
+.page {
+  min-inline-size: 360px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100dvb;
+}
+
+.content-section {
+  padding-inline: 5vi;
+
+  @media (width > 1920px) {
+    padding-inline: 20vi;
+  }
+}
+
+.heading {
+  text-align: center;
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.button {
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.underlined-text {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: var(--underline);
+    block-size: .35em;
+    inline-size: calc(100% + 8px);
+    inset-inline-start: -4px;
+    inset-block-end: .1em;
+    z-index: -1;
+  }
+}

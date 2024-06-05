@@ -1,0 +1,103 @@
+.content {
+  flex-grow: 1;
+
+  &__title {
+    margin-block: 7% 2.5%;
+    font-size: 30px;
+  }
+
+  &__text-block {
+    font-size: 18px;
+
+    *:not(:last-child) {
+      margin-block-end: 27px;
+    }
+
+    &.content__text-block_first-lettered {
+
+      .content__paragraph:first-of-type:first-letter {
+        display: inline-block;
+        margin-inline-end: 1px;
+        border: var(--accent-border);
+        padding: 0 4px;
+        font-weight: 700;
+        font-size: 30px;
+        background: var(--accent-color);
+      }
+    }
+  }
+
+  &__paragraph {
+    text-indent: 1em;
+  }
+
+  &__quote {
+    margin-inline: auto;
+    font-style: italic;
+    line-height: 2;
+    inline-size: 75%;
+  }
+
+  &__figure {
+    position: relative;
+    margin-block: 7%;
+    inline-size: calc(100% + 10vi);
+    inset-inline-end: 5vi;
+  }
+
+  &__pic-caption {
+    border-block-end: 1px solid currentColor;
+    padding-block: 20px;
+    text-align: center;
+  }
+
+  &__picture {
+    object-fit: cover;
+    object-position: center;
+    inline-size: 100%;
+  }
+
+  &__card {
+    aspect-ratio: 4 / 3;
+    border: 1px solid currentColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-block-start: 7%;
+    padding: 2.5%;
+  }
+
+  &__card-title {
+    font-size: 60px;
+  }
+
+  &__card-subtitle {
+    font-size: 18px;
+  }
+
+  &__list {
+    padding-inline-start: 40px;
+    font-size: 18px;
+  }
+
+  &__list-item {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inline-size: 10.6px;
+      block-size: 10.6px;
+      background: var(--accent-color);
+      border: var(--accent-border);
+      inset-inline-start: -20px;
+      inset-block-start: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:not(:last-of-type) {
+      margin-block-end: 10px;
+    }
+  }
+}

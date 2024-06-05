@@ -1,0 +1,10 @@
+.footer {
+  padding: 2.5%;
+  margin-block-start: 10%;
+  border-block-start: 1px solid currentColor;
+
+  &__copy {
+    font-size: 18px;
+    text-align: center;
+  }
+}

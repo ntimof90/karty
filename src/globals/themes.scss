@@ -1,0 +1,29 @@
+:root {
+
+  &.theme-dark {
+    --bg-color: #171717;
+    --text-color: #b3b3b3;
+    --accent-color: transparent;
+    --underline: url(../../images/pattern.svg);
+    --accent-border: 1px solid currentColor;
+  }
+
+  &.theme-light {
+    --bg-color: #F3EFEC;
+    --text-color: #312A4E;
+    --accent-color: #FFAB6B;
+    --underline: var(--accent-color);
+    --accent-border: 1px solid transparent;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  :root {
+    --bg-color: #F3EFEC;
+    --text-color: #312A4E;
+    --accent-color: #FFAB6B;
+    --underline: var(--accent-color);
+    --accent-border: 1px solid transparent;
+  }
+}
