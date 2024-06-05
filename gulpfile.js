@@ -13,6 +13,7 @@ const concatCss = require('gulp-concat-css');
 const GulpPostCss = require('gulp-postcss');
 const webpack = require('webpack-stream');
 const isBuild = (process.env.npm_lifecycle_event === 'build');
+const replace = require('gulp-replace');
 
 function serve() {
   return bs.init({
@@ -85,11 +86,14 @@ function scss() {
     cssnanoPlugin()
   ];
 
+  const urlRegex = /(\.)(\.\/)(\.\.\/)*(images\/|fonts\/)/g;
+
   return gulp.src('./src/index.scss')
     .pipe(plumber())
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(concatCss('bundle.css'))
+    .pipe(replace(urlRegex, '$2$3$4'))
     .pipe(GulpPostCss(plugins))
     .pipe(gulp.dest('./dist/'))
     .pipe(bs.reload({stream: true}));
