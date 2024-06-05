@@ -8,7 +8,9 @@
     "lint": "stylelint ./src/**/*.scss",
     "build": "gulp build",
     "dev": "gulp dev",
-    "clean": "gulp clean"
+    "clean": "gulp clean",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "browser-sync": "^3.0.2",
     "cssnano": "^7.0.1",
     "del": "^6.0.0",
+    "gh-pages": "^6.1.1",
     "gulp": "^5.0.0",
     "gulp-concat-css": "^3.1.0",
     "gulp-file-include": "^2.3.0",
