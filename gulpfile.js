@@ -86,14 +86,12 @@ function scss() {
     cssnanoPlugin()
   ];
 
-  const urlRegex = /(\.)(\.\/)(\.\.\/)*(images\/|fonts\/)/g;
-
   return gulp.src('./src/index.scss')
     .pipe(plumber())
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(concatCss('bundle.css'))
-    .pipe(replace(urlRegex, '$2$$4'))
+    .pipe(replace(/(\.\.\/)+(fonts|images)/g, './$2'))
     .pipe(GulpPostCss(plugins))
     .pipe(gulp.dest('./dist/'))
     .pipe(bs.reload({stream: true}));
