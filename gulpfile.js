@@ -46,6 +46,7 @@ function html() {
       prefix: '@@',
       basepath: '@file'
     }))
+    .pipe(replace(/(\.\.\/)+(images)/g, './$2'))
     .on('data', file => {
       const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options));
       return file.contents = buferFile;
