@@ -93,7 +93,7 @@ function scss() {
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(concatCss('bundle.css'))
-    .pipe(replace(urlRegex, '$2$3$4'))
+    .pipe(replace(urlRegex, '$2$$4'))
     .pipe(GulpPostCss(plugins))
     .pipe(gulp.dest('./dist/'))
     .pipe(bs.reload({stream: true}));
